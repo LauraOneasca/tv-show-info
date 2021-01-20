@@ -13,6 +13,7 @@ The tv show information is provided by OMDB API (https://www.omdbapi.com/)
 
 ## To do
 
+- Replace mock images with real images (.webp where possible, and different sizes for different scren sizes)
 - Test on more browsers and screen sizes
 - Mock the API calls
 - Improve styling (update in real time nr of carousel slides when the user resizes the browser)
