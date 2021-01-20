@@ -16,6 +16,7 @@ The tv show information is provided by OMDB API (https://www.omdbapi.com/)
 - Test on more browsers and screen sizes
 - Mock the API calls
 - Improve styling (update in real time nr of carousel slides when the user resizes the browser)
+- Add style theme with CSS variables and commonly used breakpoints
 
 # Getting Started
 
