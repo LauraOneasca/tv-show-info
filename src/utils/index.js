@@ -1,5 +1,5 @@
 const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
-const urlApi = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+const urlApi = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 /**
  * Fetches information about a specific tv show
