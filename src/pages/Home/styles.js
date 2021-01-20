@@ -80,6 +80,7 @@ export default css`
     justify-content: center;
     max-width: 49rem;
     z-index: 1;
+    padding-right: 1.6rem;
 
     h1 {
       font-size: 7.4rem;

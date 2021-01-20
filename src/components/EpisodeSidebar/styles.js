@@ -15,13 +15,17 @@ export default css`
       background-repeat: no-repeat;
       background-size: cover;
       width: 100%;
-      height: 100%;
+      height: 20rem;
 
       ${({ imageUrl }) =>
         imageUrl &&
         css`
           background-image: url(${imageUrl});
         `}
+
+      @media (min-width: 1024px) {
+        height: 100%;
+      }
     }
 
     &__content {
@@ -33,8 +37,12 @@ export default css`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 4rem;
+      padding: 1.6rem;
       border-bottom: 0.1rem solid #9797974d;
+
+      @media (min-width: 768px) {
+        padding: 4rem;
+      }
     }
 
     &__title {
@@ -59,8 +67,12 @@ export default css`
     }
 
     &__main-info {
-      padding: 4rem;
+      padding: 1.6rem;
       text-align: left;
+
+      @media (min-width: 768px) {
+        padding: 4rem;
+      }
     }
   }
 `;
