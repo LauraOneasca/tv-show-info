@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# Tv show information
+
+Deployed version: https://jovial-nightingale-f920e8.netlify.app/
+
+This project displays information about episodes from a given series and season.
+The tv show information is provided by OMDB API (https://www.omdbapi.com/)
+
+## Stack
+
+- React
+- Styled components
+- React Testing Library, Jest
+
+## To do
+
+- Test on more browsers and screen sizes
+- Mock the API calls
+- Improve styling (update in real time nr of carousel slides when the user resizes the browser)
+
+# Getting Started
+
+For the project to work properly, rename `.env.local` to `.env` and add a valid API key.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -44,27 +65,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
