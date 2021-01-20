@@ -23,26 +23,37 @@ const Home = () => {
     nrSlidesPerPage = 2;
   }
 
-  const [seriesInfo, setSeriesInfo] = React.useState({});
+  const [seriesInfo, setSeriesInfo] = React.useState(null);
   const [episodesInfo, setEpisodesInfo] = React.useState(null);
-  const [currentEpisodeNumber, setcurrentEpisodeNumber] = React.useState(1);
+  const [currentEpisodeNumber, setCurrentEpisodeNumber] = React.useState(1);
   const [episodesNumber, setEpisodesNumber] = React.useState(0);
 
-  let seriesData;
-  let episodesData;
-
+  /**
+   * Updates the seriesInfo state
+   *
+   * @param title - title of the series
+   * @returns {Promise<void>}
+   */
   async function getSeriesInfo(title) {
-    seriesData = await fetchSeriesInfo(title);
-    setSeriesInfo(seriesData);
+    const seriesData = await fetchSeriesInfo(title);
+    if (seriesData) setSeriesInfo(seriesData);
   }
 
+  /**
+   * Updates the episodesInfo and episodesNumber state
+   *
+   * @param title - title of the series
+   * @param seasonNr - the nr of the series season
+   * @returns {Promise<void>}
+   */
   async function getEpisodesInfo(title, seasonNr) {
-    episodesData = await fetchAllEpisodesCool(title, seasonNr);
-    setEpisodesInfo(episodesData);
-    setEpisodesNumber(episodesData.length);
+    const episodesData = await fetchAllEpisodesCool(title, seasonNr);
+    if (episodesData) {
+      setEpisodesInfo(episodesData);
+      setEpisodesNumber(episodesData.length);
+    }
   }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(
     () => {
       getSeriesInfo(seriesTitle);
@@ -52,8 +63,14 @@ const Home = () => {
     [],
   );
 
-  function selectEpisodeHandler(nr) {
-    setcurrentEpisodeNumber(nr + 1);
+  /**
+   * On click handler
+   * Updates the currentEpisodeNumber state
+   *
+   * @param {number} index - index of selected episode
+   */
+  function selectEpisodeHandler(index) {
+    setCurrentEpisodeNumber(index + 1);
   }
 
   return (
@@ -65,6 +82,7 @@ const Home = () => {
           <h2>{seriesInfo && seriesInfo.Plot}</h2>
         </div>
         <div className="carousel-wrapper">
+          {/** TODO abstract Slide content in a separate component  */}
           {episodesInfo && (
             <CarouselProvider visibleSlides={nrSlidesPerPage} totalSlides={episodesNumber} step={1}>
               <div className="carousel__container">
@@ -102,7 +120,5 @@ const Home = () => {
     </div>
   );
 };
-
-Home.propTypes = {};
 
 export default Home;

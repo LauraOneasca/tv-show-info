@@ -4,10 +4,13 @@ const urlApi = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 /**
  * Fetches information about a specific tv show
  *
- * @param title
+ * @param {string} title
  * @returns {Promise<any | void>}
  */
 export function fetchSeriesInfo(title) {
+  if (!title || typeof title !== 'string') return;
+
+  // eslint-disable-next-line consistent-return
   return (
     fetch(`${urlApi}&t=${title}`)
       .then(response => {
@@ -26,13 +29,16 @@ export function fetchSeriesInfo(title) {
 /**
  * Fetches information about a specific tv show season
  *
- * @param title
- * @param seasonNumber
+ * @param {string} title
+ * @param {number} seasonNr
  * @returns {Promise<any | void>}
  */
-function fetchSeasonInfo(title, seasonNumber) {
+function fetchSeasonInfo(title, seasonNr) {
+  if (!title || typeof title !== 'string' || !seasonNr || typeof seasonNr !== 'number') return;
+
+  // eslint-disable-next-line consistent-return
   return (
-    fetch(`${urlApi}&t=${title}&season=${seasonNumber}`)
+    fetch(`${urlApi}&t=${title}&season=${seasonNr}`)
       .then(response => {
         if (!response.ok) throw new Error('Server response was not OK');
         return response.json();
@@ -49,11 +55,14 @@ function fetchSeasonInfo(title, seasonNumber) {
 /**
  * Fetches information about all episodes of a certain tv show season
  *
- * @param title
- * @param seasonNr
+ * @param {string} title
+ * @param {number} seasonNr
  * @returns {Promise<unknown>}
  */
 export function fetchAllEpisodesCool(title, seasonNr) {
+  if (!title || typeof title !== 'string' || !seasonNr || typeof seasonNr !== 'number') return;
+
+  // eslint-disable-next-line consistent-return
   return (
     fetchSeasonInfo(title, seasonNr)
       .then(seasonData => {

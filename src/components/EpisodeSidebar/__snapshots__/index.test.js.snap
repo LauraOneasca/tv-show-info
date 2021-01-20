@@ -17,7 +17,7 @@ exports[`EpisodeSidebar should match the snapshot 1`] = `
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100%;
+  height: 20rem;
   background-image: url(https://picsum.photos/620/400?random=1);
 }
 
@@ -39,7 +39,7 @@ exports[`EpisodeSidebar should match the snapshot 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 4rem;
+  padding: 1.6rem;
   border-bottom: 0.1rem solid #9797974d;
 }
 
@@ -71,13 +71,31 @@ exports[`EpisodeSidebar should match the snapshot 1`] = `
 }
 
 .c0 .sidebar__main-info {
-  padding: 4rem;
+  padding: 1.6rem;
   text-align: left;
 }
 
 @media (min-width:1024px) {
   .c0 {
     width: 37%;
+  }
+}
+
+@media (min-width:1024px) {
+  .c0 .sidebar__image {
+    height: 100%;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 .sidebar__meta {
+    padding: 4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 .sidebar__main-info {
+    padding: 4rem;
   }
 }
 

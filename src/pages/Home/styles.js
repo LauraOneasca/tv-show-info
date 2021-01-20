@@ -96,12 +96,6 @@ export default css`
     }
   }
 
-  .episode-card {
-    background-color: yellow;
-    width: 37%;
-    height: 100%;
-  }
-
   .carousel-wrapper {
     height: 30rem;
     z-index: 1;
@@ -117,12 +111,23 @@ export default css`
     .sliderAnimation___300FY {
       transition: transform 0.5s;
       transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-      will-change: transform;
     }
 
     &__slider {
       @media (min-width: 1024px) {
         margin-right: -8rem;
+      }
+    }
+
+    &__slider-tray--horizontal {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+
+      li:last-of-type {
+        @media (min-width: 1024px) {
+          margin-right: 6rem;
+        }
       }
     }
 
@@ -191,18 +196,6 @@ export default css`
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
-      }
-    }
-
-    .carousel__slider-tray--horizontal {
-      display: flex;
-      list-style: none;
-      padding-left: 0;
-
-      li:last-of-type {
-        @media (min-width: 1024px) {
-          margin-right: 6rem;
-        }
       }
     }
 
