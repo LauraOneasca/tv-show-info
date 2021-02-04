@@ -2,7 +2,7 @@ import React from 'react';
 import 'styled-components/macro';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
-import { fetchSeriesInfo, fetchAllEpisodesCool } from '../../utils/index';
+import { fetchSeriesInfo, fetchAllEpisodes } from '../../utils/index';
 import EpisodeSidebar from '../../components/EpisodeSidebar';
 import styles from './styles';
 
@@ -47,7 +47,7 @@ const Home = () => {
    * @returns {Promise<void>}
    */
   async function getEpisodesInfo(title, seasonNr) {
-    const episodesData = await fetchAllEpisodesCool(title, seasonNr);
+    const episodesData = await fetchAllEpisodes(title, seasonNr);
     if (episodesData) {
       setEpisodesInfo(episodesData);
       setEpisodesNumber(episodesData.length);

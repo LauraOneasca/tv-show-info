@@ -59,7 +59,7 @@ function fetchSeasonInfo(title, seasonNr) {
  * @param {number} seasonNr
  * @returns {Promise<unknown>}
  */
-export function fetchAllEpisodesCool(title, seasonNr) {
+export function fetchAllEpisodes(title, seasonNr) {
   if (!title || typeof title !== 'string' || !seasonNr || typeof seasonNr !== 'number') return;
 
   // eslint-disable-next-line consistent-return
