@@ -22,7 +22,7 @@ export function fetchSeriesInfo(title) {
         return data;
       })
       // eslint-disable-next-line no-console
-      .catch(error => console.log(error))
+      .catch(error => ({ error: error.message }))
   );
 }
 
@@ -92,6 +92,6 @@ export function fetchAllEpisodes(title, seasonNr) {
         );
       })
       // eslint-disable-next-line no-console
-      .catch(error => console.log(error))
+      .catch(error => ({ error: error.message }))
   );
 }
