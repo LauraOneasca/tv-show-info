@@ -4,6 +4,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 
 import { fetchSeriesInfo, fetchAllEpisodes } from '../../utils/fetch';
 import { getSeriesReducer, getEpisodesReducer } from '../../utils/reducer';
+import { useWindowSize } from '../../utils/customHooks';
 import EpisodeSidebar from '../../components/EpisodeSidebar';
 import styles from './styles';
 
@@ -23,12 +24,12 @@ const initialValueSeries = {
 const Home = () => {
   const seriesTitle = 'mr+robot';
   const seasonNumber = 4;
+  const [windowWidth] = useWindowSize();
 
-  const isMediumScreen = global.window.matchMedia('(min-width: 768px)').matches;
-  const isLargeScreen = global.window.matchMedia('(min-width: 1024px)').matches;
+  const isMediumScreen = windowWidth > 768 && windowWidth < 1024;
+  const isLargeScreen = windowWidth > 1024;
   let nrSlidesPerPage;
 
-  /** TODO implement solution to update nr of slides when the users resizes window */
   if (isLargeScreen) {
     nrSlidesPerPage = 4;
   } else if (isMediumScreen) {
